@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ✅ SEO 기본: 핵심 키워드 조합 (지역명 + 브랜드 + 목적) -->
+  <title>시티오씨엘 8단지</title>
+  <meta name="description" content="시티오씨엘 8단지">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://world-meridian.vercel.app/">
+
+  <!-- 서치 콘솔 인증 유지 -->
+  <meta name="naver-site-verification" content="314a1ec8b98c32aa8ea7c0d0086c49bcb03303c1" />
+  <meta name="google-site-verification" content="Ux2hXd-XUjAzM0AAqfPHpNoVUrigGwZi52Z3eZiUNpU" />
+
+  <!-- ✅ 성능 최적화: 사전연결 및 폰트 로드 -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap">
+
+  <!-- CSS 링크 유지 (reset, common 등 순서 중요) -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 767px)">
+
+  <!-- ✅ OG/Twitter (SNS 최적화) -->
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="시티오씨엘 8단지 공식홈페이지">
+  <meta property="og:title" content="시티오씨엘 8단지 | 프리미엄 신축 아파트 방문예약">
+  <meta property="og:description" content="시티오씨엘 8단지">
+  <meta property="og:url" content="https://world-meridian.vercel.app/">
+  <meta property="og:image" content="https://world-meridian.vercel.app/img/sam.jpg">
+  <link rel="preload" as="image" href="/img/sam.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="시티오씨엘 8단지 신축 아파트">
+  <meta name="twitter:description" content="방문예약 신청하고 입장권을 문자로 받아보세요.">
+
+  <!-- 외부 스크립트 (지연 실행 최적화) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/airbnb.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+
+  <!-- Flatpickr (지연실행) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/airbnb.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js" defer></script>
+
+  <!-- 메인 스크립트 -->
+  <script src="js/script.js" defer></script>
+  
+</head>
+
+<body>
+  <!-- 팝업창 -->
+  <div id="mainPopupOverlay" class="popup-overlay">
+      <div class="popup-content">
+
+          <div class="popup-img-wrap">
+              <img src="img/event.jpg" alt="이벤트">
+          </div>
+
+          <div class="popup-btn-group">
+              <button type="button" id="btnTodayHide" class="btn-popup">오늘 하루 보지 않기</button>
+              <button type="button" id="btnPopupClose" class="btn-popup btn-close-bold">닫기</button>
+          </div>
+      </div>
+  </div>
+
+
+
+<header class="header">
+  
+  <div class="nav-container">
+    <!-- 햄버거 버튼 -->
+    <button class="menu-btn" aria-controls="site-drawer" aria-expanded="false">☰</button>
+
+    <!-- 브랜드 이미지 -->
+    <div class="brands">
+      <a href="index.html">
+        <img src="img/log.png" alt="시티오씨엘 8단지" class="brand-logo">
+      </a>
+    </div>
+
+    <!-- 전화 아이콘 -->
+    <a class="tel" href="tel:1668-0087">
+      <img src="img/call_.png" alt="전화" class="tel-icon">
+      <span class="tel-text">1668-0087</span>
+    </a>
+  </div>
+
+  <nav class="nav-menu">
+    <a href="business.html" class="nav-link">사업안내</a>
+    <a href="complex.html" class="nav-link">단지안내</a>
+    <a href="types.html" class="nav-link">타입안내</a>
+    <a href="vr.html" class="nav-link">VR투어</a>
+  </nav>
+
+  </header>
+
+
+<!-- 모바일/사이드 메뉴 -->
+<div class="drawer" id="site-drawer" aria-hidden="true">
+  <div class="drawer-backdrop" data-drawer-close></div>
+  <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="전체 메뉴">
+    <button class="drawer-close" type="button" aria-label="메뉴 닫기" data-drawer-close>×</button>
+    <nav class="drawer-nav">
+      <a class="drawer-link" href="business.html">사업안내</a>
+      <a class="drawer-link" href="complex.html">단지안내</a>
+      <a class="drawer-link" href="types.html">타입안내</a>
+      <a class="drawer-link" href="vr.html">VR투어</a>
+    </nav>
+  </aside>
+</div>
+
+<section class="hero">
+    <img src="img/hero_main.jpg" alt="">
+    <img src="img/img1.png" alt="">
+    <img src="img/img2.png" alt="">
+    <img src="img/img3.png" alt="">
+    <img src="img/img4.png" alt="">
+    <img src="img/img7.png" alt="">
+    <img src="img/img5.png" alt="">
+    <img src="img/img6.png" alt="">
+    <img src="img/img8.png" alt="">
+    <img src="img/img9.gif" alt="">
+</section>
+
+
+  <!-- ▼▼ 방문예약 섹션: 폼을 새 폼으로 교체 ▼▼ -->
+  <section id="section-form" class="panel" data-reveal>
+    <div class="pad">
+      <div class="call-info">
+        <h2 class="title">시티오씨엘 8단지</h2>
+        <p class="subtitle">1668-0087</p>
+        <h3>입장권 빠른발급</h3>
+        <h4>전화했다 끊으면 문자로 입장권 전송</h4>
+      </div>
+        <div class="backimg">
+        <form id="reservation" class="visit-form" novalidate>
+          <div class="form-group">
+            <label>방문예약 <span class="required">*</span></label>
+            <p class="sub-info">날짜와 시간을 입력해 주세요.</p>
+            <div class="input-row">
+              <input name="visitdate" id="visit-date" type="text" placeholder="방문일 선택" inputmode="none" autocomplete="off">
+            
+              <!-- 시간(표시는 range, 실제값은 시작 HH:mm) -->
+              <div class="time-wrap">
+                <input id="visit-time-display" type="text" class="time-display" placeholder="방문시간 선택" readonly aria-haspopup="listbox" aria-expanded="false">
+                <input name="visittime" id="visit-time" type="hidden" value=""> <!-- 서버로 전송될 값(HH:mm) -->             
+                <div id="time-dropdown" class="time-dropdown" role="listbox" aria-label="방문시간 선택">
+                  <div class="slot-sec">
+                    <h4>-방문시간선택-</h4>
+                    <div class="slot" role="option" tabindex="0" data-value="09:00">10시 이전</div>
+                    <div class="slot" role="option" tabindex="0" data-value="10:00">10:00 ~ 11:00</div>
+                    <div class="slot" role="option" tabindex="0" data-value="11:00">11:00 ~ 12:00</div>
+                    <div class="slot" role="option" tabindex="0" data-value="12:00">12:00 ~ 13:00</div>
+                    <div class="slot" role="option" tabindex="0" data-value="13:00">13:00 ~ 14:00</div>
+                    <div class="slot" role="option" tabindex="0" data-value="14:00">14:00 ~ 15:00</div>
+                    <div class="slot" role="option" tabindex="0" data-value="15:00">15:00 ~ 16:00</div>
+                    <div class="slot" role="option" tabindex="0" data-value="16:00">16:00 ~ 17:00</div>
+                    <div class="slot" role="option" tabindex="0" data-value="17:00">17:00 ~ 18:00</div>
+                  </div>
+                </div>
+              </div>
+              <!-- // 시간 -->
+            </div>
+          </div>
+        
+          <div class="form-group">
+            <label>성함 <span class="required">*</span></label>
+            <input name="name" type="text" placeholder="이름을 입력하세요" required autocomplete="name">
+          </div>
+        
+          <div class="form-group">
+            <label>연락처 <span class="required">*</span></label>
+            <p class="sub-info">문자로 입장권이 전송됩니다.</p>
+            <div class="input-row">
+              <input name="phone" type="tel" placeholder="연락처를 입력하세요" title="phone" required inputmode="numeric" autocomplete="tel">
+            </div>
+          </div>
+        
+          <div class="form-group">
+            <label>개인정보 수집 및 이용 동의 <span class="required">*</span></label>
+            <details class="privacy-accordion">
+              <summary>개인정보 수집·이용 동의서 [보기]</summary>
+              <div class="privacy-content">
+    - 개인정보 수집ㆍ이용에 대한 안내 -
+              
+              
+    제 1 조 개인정보의 수집 및 이용 목적
+              
+    회사가 수집한 개인정보는 다음의 목적을 위해 활용합니다.
+              
+    1. 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산
+     콘텐츠 제공, 물품배송 또는 청구서 등 발송, 본인 인증 및 구매, 요금 결재, 요금추심
+    2. 회원 관리
+     회원제 서비스 이용에 따른 본인 확인, 개인식별, 가입 의사 확인, 가입 및 가입횟수 제한,
+     본 개정 이전에 가입한 14세 미만자의 법정 대리인 본인확인, 추후 법정 대리인 본인확인, 분쟁 조정을 위한 기록보존, 불만처리 등 민원처리, 고지사항 전달
+    3. 마케팅 및 광고에 활용
+     신규 서비스(제품) 개발 및 특화, 인구통계학적 특성에 따른 서비스 제공 및 광고게재, 접속 빈도 파악, 회원의 서비스 이용에 대한 통계,
+     이벤트 등 광고성 정보 전달 (회원의 개인정보는 광고를 의뢰한 개인이나 단체에 제공되지 않습니다.)
+              
+              
+    제 2 조 수집하는 개인정보 항목 및 수집방법
+              
+    [수집하는 개인정보 항목]
+    1. 최초 회원가입 시 회원식별 및 최적화 된 서비스 제공을 위해 아래와 같은 정보를 수집합니다.
+    - 필수항목 : 이름/기업명,  이메일주소, 휴대전화번호, 가입인증정보
+    2. 개인정보 수정 시 서비스 이용 편의를 위해 회원이 자발적으로 아래와 같은 정보를 제공할 수 있습니다.
+    - 주소, 전화번호(서비스 운영상의 필수 정보 확보)
+    3. 서비스 이용 과정이나 이벤트 응모 과정, 기타 사업 처리과정에서 아래와 같은 정보가 생성되어 수집될 수 있습니다.
+    - 성명, 실명인증값, 아이핀번호(아이핀 인증시), 성별, 생년월일, 직업, 회사명, 주소, 전화번호, 서비스 이용 기록,
+      접속로그, 쿠키, 접속IP 정보, 결제기록, 불량 이용 기록, 이용자 상태정보, 방문일시
+              
+    [수집방법]
+    회사는 다음과 같은 방법으로 개인정보를 수집합니다.
+    1. 홈페이지를 통한 회원가입, 게시판, 이벤트 응모
+    2. 서비스 사용 중 이용자의 자발적 제공을 통한 수집
+              
+              
+    제 3 조 개인정보의 보유 및 이용기간
+              
+     원칙적으로 개인정보 수집 및 이용 목적이 달성된 후에는 해당 정보를 지체없이 파기합니다.
+    단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간동안 보존합니다.
+    1. 회원탈퇴 시 보존 개인정보
+    - 보존항목: 회원이 제공한 이름, 사업자등록번호, 아이디, 이메일주소, 휴대전화번호 등
+    - 보존근거: 불량 이용자의 재가입 방지, 명예훼손 등 권리침해 분쟁 및 수사협조
+    - 보존기간: 회원탈퇴 후 1년
+    2. 상법, 전자상거래등에서의 소비자보호에 관한 법률 등 관계법령의 규정에 의하여 보존할 필요가 있는 경우
+    회사는 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다.
+    이 경우 회사는 보관하는 정보를 그 보관의 목적으로만 이용하며 보존기간은 아래와 같습니다.
+              
+    - 계약 또는 청약철회 등에 관한 기록
+     ㆍ보존 이유 : 전자상거래 등에서의 소비보호에 관한 법률
+     ㆍ보존 기간 : 3년
+              
+    - 대금결제 및 재화 등의 공급에 관한 기록
+     ㆍ보존 이유 : 전자상거래 등에서의 소비자보호에 관한 법률
+     ㆍ보존 기간 : 3년
+              
+    - 소비자의 불만 또는 분쟁처리에 관한 기록
+     ㆍ보존 이유 : 전자상거래 등에서의 소비자보호에 관한 법률
+     ㆍ보존 기간 : 3년
+              
+    - 방문에 관한 기록(서비스 이용기록, 접속로그, 접속 IP 정보)
+    ㆍ보존 이유 : 통신비밀보호법
+     ㆍ보존 기간 : 3년
+              </div>
+            </details>
+            <label class="checkbox-inline">
+              <input type="checkbox" class="form-contents-privacy-checkbox" name="personalPXBO0" value="personal">
+              <span>개인정보 수집 및 이용에 동의합니다.</span>
+            </label>
+          </div>
+        
+          <button id="submitBtn" type="submit" disabled>확인</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-title">고객센터</p>
+      <p class="footer-phone"><a href="tel:1668-0087">1668-0087</a></p>
+      <p class="footer-text">항상 고객과의 소통을 위해 노력합니다.<br>
+        궁금하신 사항은 언제든지 문의해주셔도 됩니다.<br>
+        항상 고객의 입장에서 생각합니다.
+      </p>
+    </div>
+  </footer>
+  <div class="bottom-bar" id="bottom-bar">
+    <a href="#section-form" class="bottom-link reserve-link">방문예약</a>
+    <a href="tel:1668-0087" class="bottom-link call-link">1668-0087</a>
+  </div>
+
+</body>
+</html>

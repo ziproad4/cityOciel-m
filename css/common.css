@@ -1,0 +1,86 @@
+/* 공통 스타일 */
+body{font-family:'Noto Sans KR',sans-serif;line-height:1.6;background:#fff;color:#111}
+.header{position:sticky;top:0;background:rgba(255,255,255,.95);border-bottom:1px solid #e5e7eb;backdrop-filter:blur(10px)}
+.nav-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;height:64px}
+.nav-menu{display:flex;gap:20px}
+.nav-link{padding:6px 12px;border-radius:8px;transition:background .2s}
+.nav-link:hover,.nav-link.active{background:#f3f4f6}
+.container{max-width:1200px;margin:80px auto;padding:0 20px}
+
+/* 2. 팝업 CSS 스타일 */
+.popup-overlay {
+    position: fixed;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; 
+    align-items: center; 
+    justify-content: center;
+    z-index: 10000;
+}
+.popup-overlay {
+    display: none;
+}
+.popup-content {
+    background: #fff;
+    width: 290px; /* 이미지 너비에 맞게 조절 */
+    max-width: 95%; /* 모바일에서 좌우 여백 확보 */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-img-wrap {
+    /* height 대신 max-height를 사용하여 이미지 크기에 맞춰 자동으로 조절되게 함 */
+    max-height: 80vh; 
+    background: #f0f0f0;
+    overflow: hidden;
+}
+
+.popup-img-wrap img {
+    width: 100%;
+    height: 100%;
+    /* 이미지 비율을 유지하면서 영역을 채움 (중요) */
+    object-fit: contain; 
+    display: block;
+}
+
+.popup-btn-group {
+    display: flex;
+    border-top: 1px solid #eee;
+    background: #fff;
+}
+
+.btn-popup {
+    flex: 1;
+    height: 50px;
+    background: #fff;
+    border: none;
+    font-size: 15px;
+    color: #444;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-popup:first-child {
+    border-right: 1px solid #eee;
+}
+
+.btn-close-bold {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.btn-popup:hover {
+    background: #f9f9f9;
+}
+
+/* 팝업 활성화 시 본문 스크롤 방지 */
+body.popup-open {
+    overflow: hidden;
+}

@@ -1,0 +1,57 @@
+/* VR투어 전용 스타일 *//* 단지안내 전용 스타일 *//* ----- Sub Tabs ----- */
+.subtabs{
+  position: sticky;
+  top: var(--header-h, 96px);
+  z-index: 500;
+  display: flex;
+  flex-wrap: nowrap;              /* ✅ 줄바꿈 금지 */
+  gap: 0;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  overflow: hidden;               /* ✅ 바깥으로 안 나가게 */
+  -webkit-overflow-scrolling: touch;
+}
+
+.subtab{
+  -webkit-tap-highlight-color: transparent;
+  flex: 1 1 0;                    /* ✅ 균등 분배 + 축소 허용 */
+  min-width: 0;                   /* ✅ 내용 길어도 줄바꿈 대신 축소 허용 */
+  white-space: nowrap;            /* ✅ 두 줄 금지 */
+  text-overflow: ellipsis;        /* 너무 좁을 때 … 처리(원치 않으면 제거) */
+  overflow: hidden;
+
+  /* 화면 너비에 맞춰 글자/패딩도 함께 줄어듦 */
+  padding: clamp(8px, 1.6vw, 12px) clamp(8px, 1.8vw, 16px);
+  font: inherit;
+  font-weight: 700;
+  font-size: clamp(12px, 4vw, 30px);  /* ✅ 최소~최대 범위 */
+  color: #1b3550;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.subtab.is-active{
+  color: #0e3a5f;
+  background: #eef2f5;
+  border-radius: 8px 8px 0 0;
+}
+
+.subtab:focus-visible{
+  outline: 2px solid #91b5ff;
+  outline-offset: 2px;
+}
+
+/* 탭 패널 공통 */
+.subtab-panel{ display: none; padding: 0; line-height: 0; }
+.subtab-panel.is-active{ display: block; }
+
+/* 모든 탭 패널 공통: 패딩 0 */
+.subtab-panel{
+  padding: 0;
+}
+.vr-embed iframe{
+  height: 500px;
+  width:100%; 
+}

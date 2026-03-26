@@ -1,0 +1,240 @@
+
+@media screen and (max-width: 767px) {
+
+  .hero img:nth-of-type(1){display: none;}
+  /* ===== 전역 설정 ===== */
+  :root { --header-h: 108px; }
+  html, body { margin: 0; overflow-x: hidden; scroll-behavior: smooth; }
+  *, *::before, *::after { box-sizing: border-box; }
+  body { padding-top: var(--header-h) !important; -webkit-overflow-scrolling: touch; }
+
+  /* ===== 헤더 (Header) ===== */
+  .header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: #fff; }
+  .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; }
+  .menu-btn { background: none; border: 0; font-size: 22px; cursor: pointer; }
+  .brands { display: block; text-align: center; }
+  .brand-logo { height: 30px; width: auto; display: block; margin: 0 auto; }
+  .tel-icon { height: 28px; width: auto; display: block; }
+  .tel-text { display: none; } /* 모바일에서 텍스트 숨김 */
+  .nav-menu { display: flex; flex-wrap: wrap; justify-content: center; gap: 0; padding: 1px 0; border-top: 1px solid #eee; }
+  .nav-link { flex: 1 1 25%; text-align: center; font-size: 18px; font-weight: 500; white-space: nowrap; padding: 6px 0; text-decoration: none; color: #000; }
+
+  /* ===== 사이드 메뉴 (Drawer) ===== */
+  .drawer {position: fixed; inset: 0; z-index: 10000;
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity .24s ease, visibility .24s ease;
+  }
+  .drawer.is-open { opacity: 1; visibility: visible; pointer-events: auto; }
+  .drawer-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background .24s ease; }
+  .drawer.is-open .drawer-backdrop { background: rgba(0,0,0,.35); }
+  .drawer-panel {
+    position: absolute; top: 0; left: 0; height: 100%; width: min(84vw, 360px);
+    background: #fff; box-shadow: 2px 0 20px rgba(0,0,0,.12);
+    transform: translateX(-100%); transition: transform .28s cubic-bezier(.2,.8,.2,1);
+    padding: 16px; padding-top: calc(var(--header-h) + 8px);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .drawer.is-open .drawer-panel { transform: translateX(0); }
+  .drawer-close { position: absolute; top: 10px; right: 10px; border: 0; background: transparent; font-size: 40px; line-height: 1; cursor: pointer; color: #333; }
+  .drawer-nav { display: flex; flex-direction: column; gap: 6px; }
+  .drawer-link { display: block; padding: 14px 10px; font-weight: 600; font-size: 18px; color: #1b3550; text-decoration: none; border-radius: 10px; }
+  .drawer-link:hover { background: #f1f4f7; color: #0e3a5f; }
+  body.drawer-open { overflow: hidden; }
+
+  /* ===== 히어로 섹션 (Hero) ===== */
+  .hero { width: 100%; height: auto; overflow: hidden; background: #fff; line-height: 0; }
+  .hero img { width: 100%; height: auto; display: block; object-fit: contain; }
+
+  /* ===== 방문예약 섹션 (Section 11) ===== */
+  .section11 { padding: 40px 0; }
+  .section11-inner { width: 100%; max-width: 640px; margin: 0 auto; padding: 0 16px; }
+  
+  .call-info { text-align: center; margin-bottom: 20px; }
+  .call-info .brand { font-size: 18px; font-weight: 600; color: #113B66; }
+  .call-info .phone a { font-size: 28px; font-weight: 700; color: #000; text-decoration: none; }
+  .call-info .headline { font-size: 20px; margin-top: 10px; color: #2c8b83; font-weight: 800; }
+  .call-info .sub { font-size: 14px; color: #666; }
+
+  .visit-form {
+    width: 100%; max-width: 500px; margin: 0 auto; padding: 30px 20px;
+    font-family: 'Noto Sans KR', sans-serif; color: #333;
+    background: #f7fbfb; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  }
+  .form-group { margin-bottom: 25px; }
+  .visit-form label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 15px; text-align: left; }
+  .required { color: red; margin-left: 3px; }
+  .sub-info { font-size: 12px; color: #777; margin-bottom: 5px; text-align: left; }
+  .input-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .input-row input, .visit-form input[type="text"], .visit-form input[type="tel"] {
+    flex: 1; min-width: 0; padding: 10px; font-size: 14px;
+    border: 1px solid #ccc; border-radius: 4px; width: 100%; background: #fff;
+  }
+  .time-input {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%232c8b83' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/></svg>") no-repeat 10px 50% / 18px 18px;
+    padding-left: 36px !important;
+  }
+  .visit-form button {
+    width: 100%; padding: 12px; background-color: #2c8b83; color: #fff;
+    font-size: 16px; border: none; border-radius: 30px; cursor: pointer; margin-top: 10px;
+  }
+  .visit-form button:disabled { opacity: .5; cursor: not-allowed; }
+
+  /* 약관 아코디언 */
+  details.privacy-accordion { border: 1px solid #e3e8eb; border-radius: 10px; background: #fdfdfd; padding: 8px 10px; margin-top: 8px; }
+  details.privacy-accordion > summary { list-style: none; cursor: pointer; font-weight: 800; font-size: 13px; color: #2c5f59; display: flex; align-items: center; gap: 6px; }
+  details.privacy-accordion > summary::before { content: "▶"; font-size: 11px; }
+  details.privacy-accordion[open] > summary::before { content: "▼"; }
+  .privacy-content { white-space: pre-wrap; line-height: 1.6; font-size: 12px; color: #424b55; margin-top: 10px; max-height: 150px; overflow: auto; padding: 8px; border-top: 1px dashed #e6ecf0; }
+
+  .checkbox-inline { display: flex; align-items: center; gap: 8px; margin-top: 15px; cursor: pointer; }
+  .checkbox-inline span { font-size: 13px; color: #444; }
+
+  /* ===== 푸터 (Footer) ===== */
+  .footer { text-align: center; padding: 60px 16px 100px; color: #444; }
+  .footer-title { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+  .footer-phone a { font-size: 28px; font-weight: 700; color: #000; text-decoration: none; }
+  .footer-text { font-size: 15px; line-height: 1.6; color: #666; margin-top: 10px; }
+
+  /* ===== 하단 고정바 (Bottom Bar) ===== */
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            z-index: 9999;
+            height: 70px;
+            /* 버튼들이 바닥에 딱 붙지 않도록 패딩과 간격 추가 */
+            padding: 10px;
+            gap: 10px;
+            box-sizing: border-box;
+        }
+
+        .bottom-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px; /* 30px은 모바일에서 너무 클 수 있어 조절 */
+            font-weight: 700;
+            text-decoration: none;
+            /* 라운드 효과 추가 */
+            border-radius: 12px; /* 부드러운 사각형은 12px, 완전한 알약 모양은 35px */
+            transition: opacity 0.2s;
+        }
+
+        .bottom-link:active {
+            opacity: 0.8;
+        }
+
+        .reserve-link {
+          flex: 2;
+          background: #0d4e79;
+          color: #ffffff;
+        }
+
+        .call-link {
+          border: 2px solid #0d4e79;
+          font-size: 23px;
+          flex: 3;
+          background: #ffffff;
+          color: #0d4e79;
+        }
+
+  /* 애니메이션 최적화 */
+  @media (prefers-reduced-motion: reduce) {
+    .drawer, .drawer-backdrop, .drawer-panel { transition: none !important; }
+  }
+    #section-form {
+      background: url('../img/backimg\ 1.jpg') center bottom / cover;
+      padding-bottom: 20px;
+    }
+    /* ==== 방문예약 폼 전용 스타일 ==== */
+    .visit-form {
+      width:95%;max-width:500px;margin:0 auto;padding:30px 20px;
+      font-family:'Noto Sans KR',sans-serif;color:#333;box-sizing:border-box;
+      background:#f7fbfb;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.06)
+    }
+    .form-group{margin-bottom:25px}
+    .visit-form label{display:block;font-weight:600;margin-bottom:4px;font-size:15px;text-align:left}
+    .required{color:red;margin-left:3px}
+    .sub-info{font-size:12px;color:#777;margin-bottom:5px;text-align:left}
+    .input-row{display:flex;gap:10px;flex-wrap:wrap}
+    .input-row input,
+    .visit-form input[type="text"],
+    .visit-form input[type="tel"],
+    .visit-form select{
+      flex:1;min-width:0;padding:10px;font-size:14px;border:1px solid #ccc;
+      border-radius:4px;box-sizing:border-box;text-align:left;width:100%;background:#fff
+    }
+
+    /* 버튼 */
+    .visit-form button{
+      width:100%;padding:12px;background:#2c8b83;color:#fff;font-size:16px;border:none;
+      border-radius:30px;cursor:pointer;margin-top:10px;transition:transform .02s ease,opacity .2s ease,background-color .2s ease
+    }
+    .visit-form button:hover{background:#2c5f59}
+    .visit-form button:disabled{opacity:.5;cursor:not-allowed}
+
+    /* 개인정보 수집·이용 동의서 */
+    details.privacy-accordion{border:1px solid #e3e8eb;border-radius:10px;background:#fdfdfd;padding:8px 10px;margin-top:8px}
+    details.privacy-accordion>summary{list-style:none;cursor:pointer;font-weight:800;font-size:13px;color:#2c5f59;display:flex;align-items:center;gap:6px}
+    details.privacy-accordion>summary::-webkit-details-marker{display:none}
+    details.privacy-accordion>summary::before{content:"▶";font-size:11px;transform:translateY(-1px);opacity:.8}
+    details.privacy-accordion[open]>summary::before{content:"▼"}
+    .privacy-content{white-space:pre-wrap;line-height:1.6;font-size:12px;color:#424b55;margin-top:10px;max-height:200px;overflow:auto;padding:8px;border-top:1px dashed #e6ecf0}
+
+    .checkbox-inline{position:relative;top:9px;display:inline-block;margin-bottom:16px}
+    .checkbox-inline input{position:absolute;bottom:-6px}
+    .checkbox-inline span{position:absolute;bottom:-4.7px;left:23px;right:0;font-size:12px}
+
+    /* ==== 시간 슬롯 드롭다운 ==== */
+    .time-wrap{position:relative;flex:1;min-width:0}
+    .time-display{
+      cursor:pointer;background:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%232c8b83' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/></svg>")
+        no-repeat 10px 50%/18px 18px;padding-left:36px
+    }
+    .time-dropdown{
+      position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:20;background:#fff;border:1px solid #e5e7eb;border-radius:8px;
+      box-shadow:0 10px 24px rgba(0,0,0,.08);max-height:280px;overflow:auto;display:none
+    }
+    .time-dropdown.open{display:block}
+    .slot-sec{padding:8px 10px;border-bottom:1px solid #f1f5f9}
+    .slot-sec h4{margin:6px 2px 8px;font-size:13px;color:#2563eb}
+    .slot{padding:10px 14px;border-radius:6px;cursor:pointer;font-size:14px}
+    .slot:hover,.slot:focus{background:#f1f5f9;outline:none}
+    .slot[aria-selected="true"]{background:#e8f2ff}
+    .title{text-align:center;font-weight:400;font-size:32px; color: #585858; margin:0 auto; padding-top: 50px;}
+    .subtitle{text-align:center;color: rgb(1, 67, 144); font-weight: 500; margin:0px 0 24px; font-size: 40px;}
+    #section-form h3{
+      text-align: center; font-size: 25px; color: #666666;
+    }
+    #section-form h4{
+      text-align: center; font-weight: 600; color: #338077;
+    }
+        /* 안내페이지 상단 */
+.page-hero {
+    position: relative;
+    width: 100%;
+    height: 150px; /* 높이가 너무 낮으면(100px) 답답해 보일 수 있어 상향 조정 권장 */
+    background: url('../img/special-bg.png') 100% bottom / cover no-repeat;
+    
+    /* 추가된 중앙 정렬 코드 */
+    display: flex;
+    justify-content: center; /* 좌우 가운데 정렬 */
+    align-items: center;     /* 상하 가운데 정렬 */
+    text-align: center;
+    
+    color: #fff;
+    /* padding-top: 150px; */ /* 완벽한 중앙 정렬을 위해 기존 패딩은 주석 처리하거나 제거하세요 */
+}
+
+/* 내부 텍스트 스타일 */
+.page-hero h2 {
+    font-size: clamp(32px, 5vw, 50px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5); /* 배경 대비 가독성 확보 */
+    margin: 0;
+}
+}
